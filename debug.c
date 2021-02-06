@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
+#include <stdlib.h>
+
 #include "my_debug.h"
 
 FILE *debug_out = NULL;
@@ -55,4 +57,14 @@ void debug_end(void)
     debug_file = 0;
     debug_out = stdout;
   }
+}
+
+const char *dbg_spintf(const char *pszFormat, ...)
+{
+    va_list argptr;
+    char *str = malloc(1024);
+    va_start(argptr, pszFormat);
+    vsprintf(str,pszFormat,argptr);
+    va_end(argptr);
+    return str;
 }
