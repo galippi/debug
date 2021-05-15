@@ -27,6 +27,7 @@ int dprintf(int debug_level, const char *pszFormat, ...);
 void debug_init(const char *debug_file_name, FILE *d_out);
 void debug_end(void);
 const char *dbg_spintf(const char *pszFormat, ...);
+void dflush(void);
 
 _END_STD_C
 

@@ -68,3 +68,8 @@ const char *dbg_spintf(const char *pszFormat, ...)
     va_end(argptr);
     return str;
 }
+
+void dflush(void)
+{
+    fflush(debug_out);
+}
